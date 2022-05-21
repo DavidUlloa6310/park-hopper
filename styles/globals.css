@@ -1,16 +1,40 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-shape-divider-bottom-1653148595 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.custom-shape-divider-bottom-1653148595 svg {
+  position: relative;
+  display: block;
+  width: calc(171% + 1.3px);
+  height: 223px;
 }
 
-* {
-  box-sizing: border-box;
+.custom-shape-divider-bottom-1653148595 .shape-fill {
+  fill: #4d8b3f;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-bottom-1653148595 svg {
+    width: calc(270% + 1.3px);
+    height: 282px;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1653148595 svg {
+    width: calc(300% + 1.3px);
+    height: 160px;
+  }
 }
