@@ -13,6 +13,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-query": "^3.39.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-simple-maps": "^2.3.0"
   },
   "devDependencies": {
