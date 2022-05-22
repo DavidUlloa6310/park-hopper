@@ -1,7 +1,9 @@
 import "../styles/globals.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "react-modern-drawer/dist/index.css";
 
 import React from "react";
+import NavBar from "../components/NavBar";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 function MyApp({ Component, pageProps }) {
@@ -9,6 +11,7 @@ function MyApp({ Component, pageProps }) {
   return (
     // Provide the client to your App
     <QueryClientProvider client={queryClient}>
+      <NavBar></NavBar>
       <Component {...pageProps} />
     </QueryClientProvider>
   );

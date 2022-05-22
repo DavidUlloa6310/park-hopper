@@ -50,8 +50,16 @@ function State() {
         <h3 className="font-montserrat text-xl font-regular text-black">
           {data.total} Results
         </h3>
-        <MapChart textColor="white" maxHeight={"500px"} maxWidth={"750px"} />
-        <ParkList parks={data.data} />
+        <div className="w-full flex flex-col justify-center items-center">
+          <MapChart
+            textColor="white"
+            maxHeight={"500px"}
+            maxWidth={"900px"}
+            parks={data.data}
+          />
+
+          <ParkList parks={data.data} />
+        </div>
       </div>
     </main>
   );

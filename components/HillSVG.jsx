@@ -2,7 +2,7 @@ import React from "react";
 
 function HillSVG() {
   return (
-    <div className="custom-shape-divider-bottom-1653148595">
+    <div className="custom-shape-divider-bottom-1653148595 z-10">
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"

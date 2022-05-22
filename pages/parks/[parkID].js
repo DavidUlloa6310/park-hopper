@@ -58,7 +58,7 @@ function Park(props) {
             {`${park.addresses[0].postalCode}, ${park.addresses[0].city}, ${park.addresses[0].stateCode}, ${park.addresses[0].line1}, ${park.addresses[0].line2}, ${park.addresses[0].line3}`}
           </h3>
         </div>
-        <div className="z-10">
+        <div className="z-10 max-w-[600px]">
           <p className=" font-montserrat text-white text-sm">
             {park.description}
           </p>
@@ -66,11 +66,11 @@ function Park(props) {
         <div className="w-full h-full bg-black bg-opacity-40 absolute bottom-0 left-0" />
       </div>
 
-      <div className=" font-montserrat m-5">
-        <Carousel autoPlay infiniteLoop interval={7000}>
+      <div className=" font-montserrat m-5 flex flex-col lg:flex-row justify-center sm:space-x-4">
+        <Carousel autoPlay infiniteLoop interval={7000} width="100%">
           {park.images.map((image) => {
             return (
-              <div key={image.title} className="h-48 w-48">
+              <div key={image.title} className="w-[100px] h-[500px]">
                 <Image
                   alt={`${image.altText}`}
                   src={image.url}
@@ -82,20 +82,22 @@ function Park(props) {
           })}
         </Carousel>
 
-        <aside>
+        <aside className=" max-w-[500px]">
           <h4>
             <span className="font-bold">Cost:</span> $
-            {park.entranceFees[0].cost}
+            {park.entranceFees[0]?.cost}
           </h4>
           <ul className=" list-disc list-inside mt-3">
             <h4 className="font-bold">Hours:</h4>
-            <li>Sunday: {park.operatingHours[0].standardHours.sunday}</li>
-            <li>Monday: {park.operatingHours[0].standardHours.monday}</li>
-            <li>Tuesday: {park.operatingHours[0].standardHours.tuesday}</li>
-            <li>Wednesday: {park.operatingHours[0].standardHours.wednesday}</li>
-            <li>Thursday: {park.operatingHours[0].standardHours.thursday}</li>
-            <li>Friday: {park.operatingHours[0].standardHours.friday}</li>
-            <li>Sunday: {park.operatingHours[0].standardHours.sunday}</li>
+            <li>Sunday: {park.operatingHours[0]?.standardHours.sunday}</li>
+            <li>Monday: {park.operatingHours[0]?.standardHours.monday}</li>
+            <li>Tuesday: {park.operatingHours[0]?.standardHours.tuesday}</li>
+            <li>
+              Wednesday: {park.operatingHours[0]?.standardHours.wednesday}
+            </li>
+            <li>Thursday: {park.operatingHours[0]?.standardHours.thursday}</li>
+            <li>Friday: {park.operatingHours[0]?.standardHours.friday}</li>
+            <li>Sunday: {park.operatingHours[0]?.standardHours.sunday}</li>
           </ul>
           <h4 className="mt-3">
             <span className="font-bold">Weather Info: </span>
@@ -104,9 +106,9 @@ function Park(props) {
         </aside>
       </div>
 
-      <div className="mx-5 font-montserrat">
+      <div className="mx-5 font-montserrat flex flex-col justify-center items-center">
         <h4 className="font-bold">Activies</h4>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 sm:grid-cols-4 max-w-[1000px] justify-center items-center">
           {park.activities.map((activity) => {
             return (
               <div
@@ -120,7 +122,7 @@ function Park(props) {
         </div>
 
         <h4 className="font-bold mt-3">Topics</h4>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 sm:grid-cols-4 max-w-[1000px]">
           {park.topics.map((topic) => {
             return (
               <div
@@ -132,10 +134,12 @@ function Park(props) {
             );
           })}
         </div>
-        <ul className="list-disc list-inside mt-3">
+        <ul className="list-disc list-inside mt-3 mb-3">
           <h4 className="font-bold">Contact</h4>
-          <li>Phone Number: {park.contacts.phoneNumbers[0].phoneNumber}</li>
-          <li>Email Address: {park.contacts.emailAddresses[0].emailAddress}</li>
+          <li>Phone Number: {park.contacts.phoneNumbers[0]?.phoneNumber}</li>
+          <li>
+            Email Address: {park.contacts.emailAddresses[0]?.emailAddress}
+          </li>
         </ul>
       </div>
     </main>

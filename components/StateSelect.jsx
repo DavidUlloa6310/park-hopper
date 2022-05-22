@@ -13,7 +13,7 @@ function StateSelect(props) {
         <select
           id="states"
           name="states"
-          className="outline-none"
+          className="outline-none w-52"
           onChange={(e) => {
             setState(abbrState(e.target.value));
           }}
@@ -29,7 +29,7 @@ function StateSelect(props) {
       </div>
 
       <Link href={`http://localhost:3000/states/${state}`}>
-        <div className="px-24 py-2 my-5 w-fit bg-orange-400 font-open-sans font-extrabold text-white text-lg">
+        <div className="px-24 py-2 my-5 w-fit bg-orange-400 font-open-sans font-extrabold text-white text-lg cursor-pointer">
           Find
         </div>
       </Link>

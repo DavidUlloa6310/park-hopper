@@ -3,7 +3,7 @@ import MapSection from "../components/MapSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-white">
       <IntroSection />
     </main>
   );

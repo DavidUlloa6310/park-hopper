@@ -31,7 +31,12 @@ const MapChart = (props) => {
   return (
     <ComposableMap
       projection="geoAlbersUsa"
-      style={{ maxWidth: `${props.maxWidth}`, maxHeight: `${props.maxHeight}` }}
+      style={{
+        maxWidth: `${props.maxWidth}`,
+        maxHeight: `${props.maxHeight}`,
+        border: "1px solid gray",
+        borderRadius: "16px",
+      }}
     >
       <ZoomableGroup>
         <Geographies geography={geoUrl}>
@@ -84,6 +89,29 @@ const MapChart = (props) => {
             </>
           )}
         </Geographies>
+        {props.parks.map((park) => {
+          return (
+            <Marker
+              key={park.id}
+              coordinates={[
+                parseFloat(park.longitude),
+                parseFloat(park.latitude),
+              ]}
+            >
+              <g
+                fill="none"
+                stroke="#FF5533"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                transform="translate(-12, -24)"
+              >
+                <circle cx="12" cy="10" r="3" />
+                <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+              </g>
+            </Marker>
+          );
+        })}
       </ZoomableGroup>
     </ComposableMap>
   );
