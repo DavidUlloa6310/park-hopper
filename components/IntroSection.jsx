@@ -17,7 +17,7 @@ function IntroSection() {
         <h1 className=" font-extrabold text-6xl font-open-sans text-orange-400">
           Park Hopper
         </h1>
-        <h2 className=" text-3xl font-montserrat text-white mt-2">
+        <h2 className=" text-3xl font-montserrat text-white mt-2 text-center">
           Fall in love with nature.
         </h2>
         <StateSelect />

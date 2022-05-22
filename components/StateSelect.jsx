@@ -2,38 +2,26 @@ import React, { useState } from "react";
 
 import Link from "next/link";
 
-import { states, abbrState } from "../utils/NameToAbbreviation";
-
 function StateSelect(props) {
-  const [state, setState] = useState(abbrState("Arizona"));
+  const [query, setQuery] = useState("");
 
   return (
-    <>
-      <div className=" border-gray-400 border-2 w-fit mt-5">
-        <select
-          id="states"
-          name="states"
-          className="outline-none w-52"
-          onChange={(e) => {
-            setState(abbrState(e.target.value));
-          }}
-        >
-          {Object.keys(states).map(function (key, index) {
-            return (
-              <option value={key} key={key}>
-                {key}
-              </option>
-            );
-          })}
-        </select>
-      </div>
+    <div className="flex flex-col justify-center items-center">
+      <input
+        className=" rounded-xl w-full h-10 mt-5 px-2 border-2 border-gray-400"
+        placeholder="Search for a...state or activity! Try 'Alaska'"
+        onChange={(event) => {
+          setQuery(event.target.value);
+        }}
+        value={query}
+      ></input>
 
-      <Link href={`http://localhost:3000/states/${state}`}>
-        <div className="px-24 py-2 my-5 w-fit bg-orange-400 font-open-sans font-extrabold text-white text-lg cursor-pointer">
+      <Link href={`http://localhost:3000/query/${query}`}>
+        <div className="px-16 py-2 my-2 w-fit bg-orange-400 font-open-sans font-extrabold text-white text-lg cursor-pointer">
           Find
         </div>
       </Link>
-    </>
+    </div>
   );
 }
 
