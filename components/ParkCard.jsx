@@ -4,7 +4,7 @@ import Link from "next/dist/client/link";
 
 function ParkCard(props) {
   return (
-    <Link href={`http://localhost:3000/parks/${props.park.parkCode}`}>
+    <Link href={`/parks/${props.park.parkCode}`}>
       <div
         style={{ backgroundImage: `url(${props.park.images[0].url})` }}
         className={`w-72 h-80 my-5 rounded-xl bg-cover relative cursor-pointer`}

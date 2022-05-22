@@ -16,7 +16,7 @@ function StateSelect(props) {
         value={query}
       ></input>
 
-      <Link href={`http://localhost:3000/query/${query}`}>
+      <Link href={`/query/${query}`}>
         <div className="px-16 py-2 my-2 w-fit bg-orange-400 font-open-sans font-extrabold text-white text-lg cursor-pointer">
           Find
         </div>

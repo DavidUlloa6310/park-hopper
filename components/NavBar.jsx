@@ -18,7 +18,7 @@ function NavBar(props) {
   return (
     <>
       <nav className="w-full h-20 bg-orange-400 flex justify-between items-center px-5">
-        <Link href="http://localhost:3000">
+        <Link href="/">
           <AiFillHome size={50} style={{ cursor: "pointer" }} />
         </Link>
         <div
@@ -36,7 +36,7 @@ function NavBar(props) {
         direction="right"
         className=" w-[600px] bg-white flex flex-col justify-center items-center"
       >
-        <Link href="http://localhost:3000">
+        <Link href="/">
           <h1 className="text-orange-400 font-open-sans font-extrabold text-3xl cursor-pointer">
             Park Hopper
           </h1>
